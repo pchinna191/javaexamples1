@@ -1,7 +1,7 @@
 package corejavaconcepts;
 //import java.io.*;
 
-
+//string buffer is thread safe
 public class StringBuffeerDemo {
 	
 	

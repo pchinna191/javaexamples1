@@ -26,13 +26,13 @@ public class ListDemo1 {
 		}
 		System.out.println("==============");
 		
-		for(String str : strList){ //ReadOnly
+		/*for(String str : strList){ //ReadOnly
 			System.out.println(str.toUpperCase());
 			
-			/*if(str.equals("Jhon")){
+			if(str.equals("Jhon")){
 				strList.add("Dummy");
-			}*/
-		}
+			}
+		}*/
 		
 		Iterator<String> iteratorRef =  strList.iterator();
 		System.out.println("Before List Size "  + strList.size());
@@ -44,6 +44,7 @@ public class ListDemo1 {
 			}
 		}
 		System.out.println("After List Size "  + strList.size());
+		System.out.println(strList);
 		
 		System.out.println("========================");
 		ListIterator<String> listIteratorRef = strList.listIterator();
@@ -58,7 +59,8 @@ public class ListDemo1 {
 				listIteratorRef.add("NewData");
 			}
 			
-		}
+			}
+		System.out.println(strList);
 		System.out.println("===============");
 		while(listIteratorRef.hasPrevious()){
 			String str = listIteratorRef.previous();

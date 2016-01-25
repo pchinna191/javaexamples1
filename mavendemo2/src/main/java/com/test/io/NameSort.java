@@ -1,4 +1,4 @@
-package util;
+package com.test.io;
 import java.util.Comparator;
 
 public class NameSort implements Comparator<Student>{

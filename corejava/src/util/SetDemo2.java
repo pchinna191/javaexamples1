@@ -18,16 +18,16 @@ public class SetDemo2 {
 		stuSet.add(new Student(57, "Tim", 4552));
 		stuSet.add(new Student(167, "Tao", 1234));
 		stuSet.add(new Student(7, "Ken", 456));
-		
+		/*
 		System.out.println("Size  " + stuSet.size());
 		for(Student stu:stuSet){
 			if(stu.getEname().equals("Jhon"))
 				System.out.println( stu);
-			}
+			}*/
 			
 			
 			
 		
-		//System.out.println( stuSet);
+		System.out.println( stuSet);
 	}
 }

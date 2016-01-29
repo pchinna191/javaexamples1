@@ -4,14 +4,8 @@ ID,Name,Fee,Course
 103,pete,3000,phd
 106,kim,500,btech
 109,james,2000,bsc
-106,,500,bsc
-,,400,bsc
-,,3000,msc
-120,karl,5000,phd
-101,joe,2000,ms
+,,300,btech
 102,mark,1000,btech
-103,pete,3000,phd
+,pete,3000,phd
 106,kim,500,btech
-112,mark,300,btech
-113,pete,400,phd
-114,kim,200,btech
+106,John,2000,bsc

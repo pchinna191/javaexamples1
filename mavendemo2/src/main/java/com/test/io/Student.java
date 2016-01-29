@@ -72,7 +72,7 @@ public class Student implements Comparable<Student> {
 	public boolean equals(Object obj){
 		if(obj instanceof Student){
 			Student stu=(Student)obj;
-			if((this.getEno()==stu.getEno())){
+			if((this.getEno()==stu.getEno())&&(this.getEname().equals(stu.getEname()))){
 				return true;
 		}
 		return false;
@@ -85,6 +85,7 @@ public class Student implements Comparable<Student> {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((ename == null) ? 0 : ename.hashCode());
+		//result=prime*result+ename.hashCode();
 		result = prime * result + eno;
 		long temp;
 		temp = Double.doubleToLongBits(fee);

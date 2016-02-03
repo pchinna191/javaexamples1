@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="
+http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<bean id="address" class="com.test.bean.Address"> <!-- lazy-init="true" scope="prototype" --><!-- Address address = new Address() -->
+		<property name="city" value="Plymouth" /> <!-- address.setCity("Plymouth"); -->
+		<property name="state" value="MN" /><!-- Setter Injection -->
+	</bean>
+
+	<bean id="course" class="com.test.bean.Course">
+		<property name="id" value="MS1001" />
+		<property name="name" value="MS" /><!-- Setter Injection -->
+	</bean>
+
+	<!-- <bean id="course1" class="com.test.bean.Course"> <property name="id" 
+		value="MS10055" /> <property name="name" value="MS100" />Setter Injection 
+		</bean> -->
+
+	<bean id="student" class="com.test.bean.Student"> <!-- Student student = new Student(); -->
+		<property name="sno" value="101" />
+		<property name="sname" value="Rama" /><!-- Setter Injection -->
+		<property name="course" value="MS" /> <!-- student.setCourse("MS"); -->
+		<property name="fee" value="4500" />
+		<property name="address" ref="address" /> <!-- Dependency Injection -->
+		<property name="courseObj">
+			<bean id="course" class="com.test.bean.Course">
+				<property name="id" value="MS1001" />
+				<property name="name" value="MS" /><!-- Setter Injection -->
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="student1" class="com.test.bean.Student" autowire="byType"> <!-- Student student = new Student(); -->
+		<constructor-arg name="sno" value="900" />
+		<constructor-arg name="sname" value="Ravi" />
+		<constructor-arg name="course" value="MD" />
+		<constructor-arg name="fee" value="5500" />
+	</bean>
+
+</beans>

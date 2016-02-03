@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="
+http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<bean id="referneceData" class="com.test.bean.ReferenceData">
+		<property name="countryList">
+			<list>
+				<value>USA</value>
+				<value>India</value>
+			</list>
+		</property>
+		<property name="stateList">
+			<set>
+				<value>MN</value>
+				<value>NJ</value>
+				<value>AZ</value>
+			</set>
+		</property>
+		<property name="currencyMap">
+			<map>
+				<entry key="INR" value="INDIA" />
+				<entry key="USD" value="USA" />
+			</map>
+		</property>
+		<property name="objects">
+			<list>
+				<value>Rama</value>
+				<value>4545</value>
+				<bean id="course" class="com.test.bean.Course">
+					<property name="id" value="AX100" />
+					<property name="name" value="BS" />
+				</bean>
+				<ref bean="course1" />
+			</list>
+		</property>
+	</bean>
+
+	<bean id="course1" class="com.test.bean.Course">
+		<property name="id" value="MS10055" />
+		<property name="name" value="MS100" />
+	</bean>
+
+</beans>

@@ -3,10 +3,12 @@ import java.math.BigDecimal;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "student")
+@NamedQuery(name="findByName",query="From com.test.pojo.Student stu where stu.name like :name")
 public class Student {
 	@Id
 	private Integer id;

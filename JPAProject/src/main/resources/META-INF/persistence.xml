@@ -6,6 +6,8 @@ http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
 	<persistence-unit name="jpa-example" transaction-type="RESOURCE_LOCAL">
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 		<class>com.test.pojo.Student</class>
+		<class>com.test.pojo.User</class>
+		<class>com.test.pojo.Course</class>
 		<properties>
 			<!--  DB Properties -->
 			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/jan_db" />

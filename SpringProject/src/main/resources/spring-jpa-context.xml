@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx" xmlns:p="http://www.springframework.org/schema/p"
+xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+    <context:annotation-config />
+    <context:component-scan base-package="com.test.jpa" />
+    <aop:aspectj-autoproxy proxy-target-class="false" />
+<!--  ############################################## CONFIG DB  SCHEMA CONFIGURATION START ####################### -->
+   <bean id="mySQLDataSource" 
+
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource"
+		lazy-init="true">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://localhost:3306/feb_db" />
+		<property name="username" value="root" />
+		<property name="password" value="root" />
+	</bean>   
+	                        
+	 <bean id="myAppEntityManager" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+        <property name="dataSource" ref="mySQLDataSource" />
+        <property name="jpaVendorAdapter">
+            <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+                <property name="showSql" value="true" />
+                <property name="databasePlatform" value="org.hibernate.dialect.MySQL5InnoDBDialect" />
+            </bean>
+        </property>
+        <property name="jpaPropertyMap">
+            <map>
+                <entry key="hibernate.connection.release_mode" value="auto" />
+                <entry key="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect" />
+                <entry key="hibernate.query.substitutions" value="true 1, false 0" />
+                <entry key="hibernate.connection.autocommit" value="false" />
+                <entry key="hibernate.hbm2ddl.auto" value="none"></entry>
+                <entry key="hibernate.default_schema" value="jandb" />
+            </map>
+        </property>
+
+        <property name="jpaDialect">
+            <bean class="org.springframework.orm.jpa.vendor.HibernateJpaDialect" />
+        </property>
+        <property name="loadTimeWeaver">
+            <bean class="org.springframework.instrument.classloading.InstrumentationLoadTimeWeaver" />
+        </property>
+        <property name="packagesToScan">
+            <list>
+	
+			<value>com.test.dao.pojo</value>
+		</list>
+	   </property>
+
+	</bean>
+	
+    <bean id="myAppTransactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+        <property name="entityManagerFactory" ref="myAppEntityManager" />
+    </bean>
+	<tx:annotation-driven transaction-manager="myAppTransactionManager" />
+	
+	<!-- <bean id="org.dozer.Mapper" class="org.dozer.DozerBeanMapper"> -->
+	
+	<bean id="org.dozer.Mapper" class="org.dozer.DozerBeanMapper"/>
+</beans>

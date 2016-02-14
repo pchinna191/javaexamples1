@@ -4,9 +4,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.test.dao.pojo.Student;
+
 import com.test.dto.StudentDTO;
 import com.test.jpa.dao.StudentDAO;
+import com.test.jpa.dao.pojo.Student;
 
 @Service
 @Transactional

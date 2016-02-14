@@ -31,7 +31,7 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.sprin
                 <entry key="hibernate.query.substitutions" value="true 1, false 0" />
                 <entry key="hibernate.connection.autocommit" value="false" />
                 <entry key="hibernate.hbm2ddl.auto" value="none"></entry>
-                <entry key="hibernate.default_schema" value="jandb" />
+                <entry key="hibernate.default_schema" value="feb_db" />
             </map>
         </property>
 
@@ -41,10 +41,10 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.sprin
         <property name="loadTimeWeaver">
             <bean class="org.springframework.instrument.classloading.InstrumentationLoadTimeWeaver" />
         </property>
-        <property name="packagesToScan">
+        <property name="packagesToScan"	>
             <list>
 	
-			<value>com.test.dao.pojo</value>
+			<value>com.test.jpa.dao.pojo</value>
 		</list>
 	   </property>
 

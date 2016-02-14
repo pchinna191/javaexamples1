@@ -5,12 +5,10 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.sprin
     <context:annotation-config />
     <context:component-scan base-package="com.test.jdbc" />
     
-    <bean id="mySQLDataSource" 
-
-		class="org.springframework.jdbc.datasource.DriverManagerDataSource"
+    <bean id="mySQLDataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource"
 		lazy-init="true">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
-		<property name="url" value="jdbc:mysql://localhost:3306/Feb_db" />
+		<property name="url" value="jdbc:mysql://localhost:3306/feb_db" />
 		<property name="username" value="root" />
 		<property name="password" value="root" />
 	</bean>   

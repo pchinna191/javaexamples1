@@ -16,7 +16,7 @@ public static void main(String[] args) {
 		System.out.println(studentDTO);*/
 		
 		//New Record
-		studentDAO.save(new StudentDTO(6111, "Rao", "MS", 4567));
+		//studentDAO.save(new StudentDTO(6111, "Rao", "MS", 4567));
 		
 		//Delete
 		/*studentDAO.delete(101);*/

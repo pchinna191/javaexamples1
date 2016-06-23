@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.test.com/service"
+	xmlns:tns="http://www.test.com/service" elementFormDefault="qualified">
+
+	<element name="CreditRequest">
+		<complexType>
+			<sequence>
+				<element name="ssn" type="string" minOccurs="1" maxOccurs="1" />
+				<element name="fname" type="string" maxOccurs="1" />
+				<element name="dob" type="string" minOccurs="1" maxOccurs="1" />
+			</sequence>
+		</complexType>
+	</element>
+
+	<element name="CreditResponse">
+		<complexType>
+			<sequence>
+				<element name="creditScore" type="int" minOccurs="1"
+					maxOccurs="1" />
+				<element name="noOfAccounts" type="int" maxOccurs="1" />
+				<element name="Accounts" type="tns:CreditAccount" minOccurs="0"
+					maxOccurs="unbounded" />
+			</sequence>
+		</complexType>
+	</element>
+	
+	<element name="ErrorResponse">
+		<complexType>
+			<sequence>
+				<element name="errorMsg" type="string" />
+				<element name="errorCode" type="string" />
+			</sequence>
+		</complexType>
+	</element>
+
+	<complexType name="CreditAccount">
+		<sequence>
+			<element name="providerName" type="string" minOccurs="1"
+				maxOccurs="1" />
+			<element name="MaxBal" type="int" minOccurs="1" maxOccurs="1" />
+			<element name="CurrentBal" minOccurs="1" maxOccurs="1" />
+		</sequence>
+	</complexType>
+
+</schema>

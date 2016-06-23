@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.test.com/xproject"
+	xmlns:tns="http://www.test.com/xproject" elementFormDefault="qualified">
+
+	<complexType name="person">
+		<sequence>
+			<element name="pid" type="int" />
+			<element name="pname" type="string" />
+			<element name="address" type="tns:Address" />
+		</sequence>
+	</complexType>
+
+	<complexType name="Address">
+		<sequence>
+			<element name="city" type="string" />
+			<element name="state" type="string" />
+			<element name="zipcode" type="string" />
+		</sequence>
+	</complexType>
+	
+	<element name="PersonRequest">
+		<complexType>
+			<sequence>
+				<element name="person" type="tns:person"/>
+			</sequence>
+		</complexType>
+	</element>
+	
+	<element name="PersonResponse">
+		<complexType>
+			<sequence>
+				<element name="person" type="tns:person"/>
+			</sequence>
+		</complexType>
+	</element>
+
+</schema>

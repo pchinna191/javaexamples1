@@ -1,0 +1,16 @@
+com\test\xproject\package-info.class
+com\test\xproject\Person.class
+com\test\service\ErrorResponse.class
+com\test\xproject\PersonRequest.class
+com\test\service\CreditRequest.class
+com\test\xproject\PersonResponse.class
+com\test\service\ObjectFactory.class
+com\test\service\package-info.class
+com\test\service\StudentRequest.class
+com\test\service\CreditResponse.class
+generated\ObjectFactory.class
+generated\Response.class
+com\test\service\StudentResponse.class
+com\test\service\CreditAccount.class
+com\test\xproject\Address.class
+com\test\xproject\ObjectFactory.class

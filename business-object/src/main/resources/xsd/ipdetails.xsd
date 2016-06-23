@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	elementFormDefault="qualified">
+
+   <element name="Response">
+	    <complexType>
+	    	<sequence>
+	    		<element name="IP" type="string"/>
+	    		<element name="CountryCode" type="string"/>
+	    		<element name="CountryName" type="string"/>
+	    		<element name="RegionCode" type="string"/>
+	    		<element name="RegionName" type="string"/>
+	    		<element name="City" type="string"/>
+	    		<element name="ZipCode" type="string"/>
+	    		<element name="TimeZone" type="string"/>
+	    		<element name="Latitude" type="string"/>
+	    		<element name="Longitude" type="string"/>
+	    		<element name="MetroCode" type="string"/>
+	    	</sequence>
+	    </complexType>
+    </element>
+</schema>
